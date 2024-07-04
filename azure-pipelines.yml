@@ -14,8 +14,8 @@ steps:
     BrowserStackServiceEndPoint: 'browserstack-connection'
 - task: DotNetCoreCLI@2
   inputs:
-    command: 'test'
-    testRunTitle: 'Test Execution'    
+    command: 'custom'
+    custom: 'dotnet test --filter "Category=sample-test"'
 - task: BrowserStackResults@1
   inputs:
     browserstackProduct: 'automate'
