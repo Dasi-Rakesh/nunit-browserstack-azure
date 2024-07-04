@@ -17,8 +17,6 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'test'
-    testRunTitle: 'Test Execution'
-
 - task: BrowserStackResults@1
   inputs:
     browserstackProduct: 'automate'
