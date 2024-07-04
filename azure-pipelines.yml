@@ -12,10 +12,11 @@ steps:
 - task: BrowserStackConfig@0
   inputs:
     BrowserStackServiceEndPoint: 'browserstack-connection'
-- task: BrowserStackResults@1
-  inputs:
-    browserstackProduct: 'automate'
 - task: DotNetCoreCLI@2
   inputs:
     command: 'test'
-    testRunTitle: 'Test Execution'
+    testRunTitle: 'Test Execution'    
+- task: BrowserStackResults@1
+  inputs:
+    browserstackProduct: 'automate'
+
