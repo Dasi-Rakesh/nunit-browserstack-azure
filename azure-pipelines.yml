@@ -15,7 +15,7 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'custom'
-    custom: 'dotnet build test --filter "Category=sample-local-test"'
+    custom: 'dotnet test --filter "Category=sample-local-test"'
 
 - task: BrowserStackResults@1
   inputs:
