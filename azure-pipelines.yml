@@ -14,7 +14,10 @@ steps:
     BrowserStackServiceEndPoint: 'browserstack-connection'
 - task: CmdLine@2
   inputs:
-    script: 'dotnet test --filter "Category=sample-test"'
+    script: |
+      dotnet build
+      
+      dotnet test --filter "Category=sample-local-test"
 
 - task: BrowserStackResults@1
   inputs:
