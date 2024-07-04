@@ -12,12 +12,10 @@ steps:
 - task: BrowserStackConfig@0
   inputs:
     BrowserStackServiceEndPoint: 'browserstack-connection'
-- task: CmdLine@2
+- task: DotNetCoreCLI@2
   inputs:
-    script: |
-      dotnet build
-      
-      dotnet test --filter "Category=sample-local-test"
+    command: 'custom'
+    custom: 'dotnet build test --filter "Category=sample-local-test"'
 
 - task: BrowserStackResults@1
   inputs:
